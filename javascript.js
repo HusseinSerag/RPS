@@ -7,18 +7,26 @@ function getComputerChoice(){
 function playRound(playerSelection,ComputerSelection){
     const playerSelectionCmp = playerSelection.toLowerCase();
     
+    console.log(`Your choice :${playerSelection} , Computer Choice : ${ComputerSelection} `)
     
     if (playerSelectionCmp === 'rock'){
 
         return rockChoice(ComputerSelection)
     }
 
-    if(playerSelection === 'paper'){
+    else if(playerSelectionCmp === 'paper'){
         return paperChoice(ComputerSelection)
+    }
+
+    else if(playerSelectionCmp === 'scissors'){
+        return scissorsChoice(ComputerSelection)
     }
     else{
         return 'wrong input'
     }
+
+    
+
 }
 
 function rockChoice(ComputerSelection){
@@ -45,6 +53,19 @@ function paperChoice(ComputerSelection){
     }
 }
 
+function scissorsChoice(ComputerSelection){
+    if(ComputerSelection === 'scissors'){
+        console.log('draw!')
+
+    }
+    else if(ComputerSelection === 'paper'){
+        console.log('You won! , Scissors cuts paper')
+    }
+    else{
+        console.log('You lost! , rock crushed scissors')
+    }
+}
+
 
 
 
@@ -65,9 +86,11 @@ function game(){
 
     
     for(let counter = 0 ; counter < numberOfGames ; counter++){
-
+        console.group(`Round ${counter+1}`)
         console.log(playRound(prompt('Your choice'),getComputerChoice()))
+        console.groupEnd(`Round ${counter+1}`)
     }
+    
 }
 
 game()
