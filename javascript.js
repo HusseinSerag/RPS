@@ -110,6 +110,7 @@ const text = document.querySelector('.text');
 const choices = document.querySelector('.choices')
 const player = document.querySelector('.player')
 const computer = document.querySelector('.computer')
+const message = document.querySelector('.message')
 
 buttons.addEventListener('click', e =>{
     e.target.id === 'rock' ? game('rock') : e.target.id === 'paper' ? game('paper') : e.target.id === 'scissors' ? game('scissors') : '';
