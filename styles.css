@@ -112,3 +112,7 @@ img:hover {
     margin: 5px;
     font-family: 'Indie Flower', 'cursive';
 }
+
+.clickable{
+    font-weight: bolder;
+}

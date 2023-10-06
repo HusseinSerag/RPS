@@ -195,3 +195,12 @@ document.addEventListener('keydown',(e)=>{
     }
 },{once:true})
 
+
+const clickable = document.querySelector('.clickable')
+document.addEventListener('click',e=>{
+
+    document.body.removeChild(container1)
+    document.body.insertBefore(startNode , footer)
+        
+},{once:true})
+
