@@ -3,6 +3,18 @@
     padding:0;
     box-sizing: border-box;
 }
+body{
+    width:100vw;
+    height:100vh;
+    background-color: #00308F;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Indie Flower', 'cursive';
+    justify-content: center;
+    align-items: center;
+    
+}
+
 button:active{
     border-style: outset;
 }
@@ -11,4 +23,13 @@ button:focus{
 }
 button{
     border: 0;
+}
+
+
+.container-1{
+    flex:1;
+    padding:48px 24px;
+    text-align: center;
+    max-width: 900px;
+
 }
