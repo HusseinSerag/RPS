@@ -91,14 +91,24 @@ img{
 button{
     background-color: #00308F;
 }
-img :hover{
-    width:100px;
-    height:auto;
-}
-img :hover::after{
-    width:150px;
-    height:auto;
-}
-.choices{
+
+img {
+     transition: transform 0.5s; 
+    }
+img:hover { 
+    transform: scale(0.90);
+ }
+
+.choices, .text{
     height:25px;
+    font-size: 1.5em;
+    margin:20px 5px;
+}
+
+.remove{
+    color:#ffeeff;
+    padding: 24px 48px;
+    font-size: 24px;
+    margin: 5px;
+    font-family: 'Indie Flower', 'cursive';
 }

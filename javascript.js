@@ -76,6 +76,24 @@ function gameover(Winner){
     else{
         choices.textContent = 'Computer won'
     }
+
+
+    let btn = document.createElement('button');
+    btn.textContent = 'Play Again Maybe?'
+    btn.classList.toggle('remove')
+    startNode.appendChild(btn)
+    btn.addEventListener('click',(e)=>{
+        buttons.childNodes.forEach(btn =>{
+            btn.disabled = false
+        })
+        text.textContent = ''
+        choices.textContent = ''
+        player.textContent = '0'
+        computer.textContent = '0'
+        startNode.removeChild(btn)
+    })
+
+
 }
 
 
@@ -164,16 +182,6 @@ let timerIdIns = setInterval(addToPageIns, 1000);
 startNode= container2.removeChild(startNode);
 
 
-
-    
-   
-        
-    
-
-   
-
-
-
 buttons.addEventListener('click', e =>{
     e.target.id === 'rock' ? game('rock') : e.target.id === 'paper' ? game('paper') : e.target.id === 'scissors' ? game('scissors') : '';
     
@@ -183,7 +191,7 @@ document.addEventListener('keydown',(e)=>{
     if(e.key = 'enter'){
         document.body.removeChild(container1)
         document.body.insertBefore(startNode , footer)
-        console.log(e)
+        
     }
 },{once:true})
 
