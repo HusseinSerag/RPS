@@ -12,20 +12,24 @@
 </head>
 <body>
     <div class="container-1">
-        <h1>Welcome to Rock, Paper, Scissors! </h1>
-
-        <h3>Are you ready to play?</h3>
+        <h1 class="header">Welcome to Rock, Paper, Scissors!</h1>
+        <h2 class="animate">Are you ready to play?</h2>
+        <div class="instructions-container">
+        <div class="instructions"> You will play a total of 5 rounds against a Computer, win for a prize at the end!!</div>
+        <div class="instructions">Press Enter to play</div>
+        </div>
     </div>
     <div class="container-2">
         <div class="start">
+            <div class="scores">Player: <span class="player">0</span> Computer: <span class="computer">0</span></div>
             <div class="choices"></div>
             <div class="game">
             <button><img src="./images/rock.png" id="rock"></button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button><img src="./images/paper.png" id="paper"></button>
+            <button><img src="./images/scissors.png" id="scissors"></button>
             </div>
             <div class="text"></div>
-            <div class="scores">Player: <span class="player">0</span> Computer: <span class="computer">0</span></div>
+            
         </div>
     </div>
 

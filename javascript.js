@@ -111,12 +111,66 @@ const choices = document.querySelector('.choices')
 const player = document.querySelector('.player')
 const computer = document.querySelector('.computer')
 const message = document.querySelector('.message')
-const container = document.querySelector('.container-2')
+const container2 = document.querySelector('.container-2')
+const container1 = document.querySelector('.container-1')
+const instructionContainer = document.querySelector('.instructions-container')
+const footer = document.querySelector('.footer')
 let startNode = document.querySelector('.start')
 
-startNode= container.removeChild(startNode);
-console.log(startNode)
 
+let container1Children = Array.from(container1.children)
+let instructionContainerChildren = Array.from(instructionContainer.children)
+let runCount = 0;   
+container1Children.forEach(child =>{
+    
+    child.classList.toggle('hidden')
+    
+})
+instructionContainerChildren.forEach(child =>{
+    child.classList.toggle('hidden')
+})
+
+
+
+ 
+function addToPage() {
+    
+    console.log(runCount)
+    container1Children[runCount].classList.toggle('hidden')
+    runCount++;
+    if(runCount  >= container1Children.length) clearInterval(timerId);
+
+    
+}
+
+let timerId = setInterval(addToPage, 1000); 
+
+
+let myRunCount = 0
+
+function addToPageIns() {
+    
+    console.log(myRunCount)
+    instructionContainerChildren[myRunCount].classList.toggle('hidden')
+    myRunCount++;
+    if(myRunCount  >= instructionContainerChildren.length) clearInterval(timerIdIns);
+
+    
+}
+
+let timerIdIns = setInterval(addToPageIns, 1000); 
+
+
+startNode= container2.removeChild(startNode);
+
+
+
+    
+   
+        
+    
+
+   
 
 
 
@@ -124,4 +178,12 @@ buttons.addEventListener('click', e =>{
     e.target.id === 'rock' ? game('rock') : e.target.id === 'paper' ? game('paper') : e.target.id === 'scissors' ? game('scissors') : '';
     
 });
+
+document.addEventListener('keydown',(e)=>{
+    if(e.key = 'enter'){
+        document.body.removeChild(container1)
+        document.body.insertBefore(startNode , footer)
+        console.log(e)
+    }
+},{once:true})
 
